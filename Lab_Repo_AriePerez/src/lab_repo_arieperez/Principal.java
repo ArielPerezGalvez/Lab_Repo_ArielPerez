@@ -20,6 +20,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Login");
         this.setLocationRelativeTo(this);
+        registar.setTitle("Registro");
     }
 
     /**
@@ -47,11 +48,14 @@ public class Principal extends javax.swing.JFrame {
         tapellido = new javax.swing.JTextField();
         tcorreo = new javax.swing.JTextField();
         tnumero = new javax.swing.JTextField();
-        tcontra = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        tcontra1 = new javax.swing.JTextField();
         tfecha = new com.toedter.calendar.JDateChooser();
         tpais = new javax.swing.JTextField();
+        tcontra = new javax.swing.JPasswordField();
+        tcontra1 = new javax.swing.JPasswordField();
+        buzon = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -59,8 +63,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        usuario = new javax.swing.JTextField();
+        contrase = new javax.swing.JPasswordField();
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -149,13 +153,16 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addGap(85, 85, 85))))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tcontra1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel14))
-                    .addComponent(tcontra))
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel14)
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tcontra)
+                            .addComponent(tcontra1, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
@@ -200,16 +207,20 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tcontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tcontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel14))
                     .addComponent(tpais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tcontra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addGap(46, 46, 46))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addGap(46, 46, 46))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(tcontra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout registarLayout = new javax.swing.GroupLayout(registar.getContentPane());
@@ -221,6 +232,40 @@ public class Principal extends javax.swing.JFrame {
         registarLayout.setVerticalGroup(
             registarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 416, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel15.setText("Buzon");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(245, 245, 245)
+                .addComponent(jLabel15)
+                .addContainerGap(296, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel15)
+                .addContainerGap(350, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout buzonLayout = new javax.swing.GroupLayout(buzon.getContentPane());
+        buzon.getContentPane().setLayout(buzonLayout);
+        buzonLayout.setHorizontalGroup(
+            buzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        buzonLayout.setVerticalGroup(
+            buzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -249,6 +294,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton2.setText("Ingresar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -271,9 +321,9 @@ public class Principal extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addGap(17, 17, 17)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                                    .addComponent(jTextField2))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(usuario)
+                                    .addComponent(contrase, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))))
                         .addGap(1, 24, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -294,11 +344,11 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(contrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addComponent(jButton2))
                     .addComponent(jLabel2))
@@ -334,17 +384,39 @@ public class Principal extends javax.swing.JFrame {
         if (tnombre.getText().equals(vacio) || tapellido.getText().equals(vacio) || tcorreo.getText().equals(vacio) || tnumero.getText().equals(vacio) || tcontra1.getText().equals(vacio) || tcontra1.getText().equals(vacio) || tpais.getText().equals(vacio)) {
             JOptionPane.showMessageDialog(this.registar, "No ha ingresado toda la informacion");
         } else {
-            JOptionPane.showMessageDialog(this.registar, "Cuenta guardada exitosamente");
-            registar.setVisible(false);
-            tnombre.setText("");
-            tapellido.setText("");
-            tcorreo.setText("");
-            tnumero.setText("");
-            tcontra1.setText("");
-            tcontra.setText("");
-            tpais.setText("");
+            if (!tcontra.getText().equals(tcontra1.getText())) {
+                JOptionPane.showMessageDialog(this.registar, "las contraseñas no son compatibles");
+                tcontra.setText("");
+                tcontra1.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this.registar, "Cuenta guardada exitosamente");
+                registar.setVisible(false);
+                tnombre.setText("");
+                tapellido.setText("");
+                tcorreo.setText("");
+                tnumero.setText("");
+                tcontra1.setText("");
+                tcontra.setText("");
+                tpais.setText("");
+            }
         }
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        if (usuario.getText().equals(vacio) || contrase.getText().equals(vacio)) {
+            JOptionPane.showMessageDialog(this, "No esta la informacion requerida");
+            usuario.setText("");
+            contrase.setText("");
+        } else {
+            buzon.setModal(true);
+            buzon.pack();
+            buzon.setLocationRelativeTo(this);
+            buzon.setVisible(true);
+            usuario.setText("");
+            contrase.setText("");
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -382,6 +454,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog buzon;
+    private javax.swing.JPasswordField contrase;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -391,6 +465,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -401,17 +476,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JDialog registar;
     private javax.swing.JTextField tapellido;
-    private javax.swing.JTextField tcontra;
-    private javax.swing.JTextField tcontra1;
+    private javax.swing.JPasswordField tcontra;
+    private javax.swing.JPasswordField tcontra1;
     private javax.swing.JTextField tcorreo;
     private com.toedter.calendar.JDateChooser tfecha;
     private javax.swing.JTextField tnombre;
     private javax.swing.JTextField tnumero;
     private javax.swing.JTextField tpais;
+    private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 String vacio = "";
 }
