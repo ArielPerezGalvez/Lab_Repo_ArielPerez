@@ -174,7 +174,9 @@ public class Personas {
 
     @Override
     public String toString() {
-        return correo;
+        return "Personas{" + "nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", fecha=" + fecha + ", pais=" + pais + ", numero=" + numero + ", contrasena=" + contrasena + '}';
     }
+
+   
 
 }//fin de la clase
