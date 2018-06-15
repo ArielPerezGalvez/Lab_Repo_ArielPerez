@@ -192,7 +192,6 @@ public class Personas {
 
     public void setArchivo(File archivo) {
         this.archivo = archivo;
-        cargarArchivo();
         setNombre(this.archivo.getName());
     }
 
@@ -225,25 +224,6 @@ public class Personas {
         }
         bw.close();
         fw.close();
-    }
-
-    public void cargarArchivo() {
-
-        if (archivo.exists()) {//asi verificamos si el archivo existe
-            Scanner sc = null;
-            try {
-                System.out.println("Nuevo");
-                sc = new Scanner(archivo);
-                sc.useDelimiter(";");
-                while (sc.hasNext()) {
-                    System.out.println("usuario");
-                    per.add(new Personas());
-                }
-            } catch (Exception e) {
-            }
-            sc.close();
-        }
-
     }
 
 }//fin de la clase
