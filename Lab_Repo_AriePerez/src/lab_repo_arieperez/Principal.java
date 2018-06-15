@@ -84,7 +84,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         de = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        area = new javax.swing.JTextArea();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         borradores = new javax.swing.JDialog();
@@ -92,13 +92,30 @@ public class Principal extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabla_personas = new javax.swing.JTable();
         spam = new javax.swing.JDialog();
         jPanel8 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jButton17 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        spamear = new javax.swing.JTable();
+        enviadoss = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        envi = new javax.swing.JTable();
+        jButton15 = new javax.swing.JButton();
+        eliminados = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        elimina = new javax.swing.JTable();
+        jButton18 = new javax.swing.JButton();
+        leidos = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        menu = new javax.swing.JPopupMenu();
+        eliminar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -356,10 +373,20 @@ public class Principal extends javax.swing.JFrame {
         jButton11.setText("Enviados");
         jButton11.setBorder(null);
         jButton11.setContentAreaFilled(false);
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
 
         jButton12.setText("Eliminados");
         jButton12.setBorder(null);
         jButton12.setContentAreaFilled(false);
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -455,9 +482,9 @@ public class Principal extends javax.swing.JFrame {
 
         de.setEnabled(false);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        area.setColumns(20);
+        area.setRows(5);
+        jScrollPane2.setViewportView(area);
 
         jButton13.setText("Enviar correo");
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -467,6 +494,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton14.setText("Enviar a borrador");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -541,22 +573,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_personas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Para", "Mensaje"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(tabla_personas);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -568,11 +593,11 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton16)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -580,8 +605,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(jLabel18)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jButton16)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -610,14 +635,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        spamear.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Mensajes"
@@ -631,7 +651,7 @@ public class Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable3);
+        jScrollPane5.setViewportView(spamear);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -640,24 +660,27 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel19))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(jLabel19))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton17)))
+                        .addGap(0, 132, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton17))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel19)
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addComponent(jButton17)
                 .addGap(30, 30, 30))
         );
@@ -672,6 +695,181 @@ public class Principal extends javax.swing.JFrame {
             spamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        jPanel9.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel20.setText("Mensaje que enviaste");
+
+        envi.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Correo", "Mensaje"
+            }
+        ));
+        envi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enviMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(envi);
+
+        jButton15.setText("Regresar");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel20))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton15)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel20)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jButton15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout enviadossLayout = new javax.swing.GroupLayout(enviadoss.getContentPane());
+        enviadoss.getContentPane().setLayout(enviadossLayout);
+        enviadossLayout.setHorizontalGroup(
+            enviadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        enviadossLayout.setVerticalGroup(
+            enviadossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel10.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel21.setText("Mesajes que eliminaste");
+
+        elimina.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Mensaje"
+            }
+        ));
+        elimina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminaMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(elimina);
+
+        jButton18.setText("Regresar");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel21))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton18))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jButton18)
+                .addGap(30, 30, 30))
+        );
+
+        javax.swing.GroupLayout eliminadosLayout = new javax.swing.GroupLayout(eliminados.getContentPane());
+        eliminados.getContentPane().setLayout(eliminadosLayout);
+        eliminadosLayout.setHorizontalGroup(
+            eliminadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        eliminadosLayout.setVerticalGroup(
+            eliminadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel11.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(230, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(170, 170, 170))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel22)
+                .addContainerGap(275, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout leidosLayout = new javax.swing.GroupLayout(leidos.getContentPane());
+        leidos.getContentPane().setLayout(leidosLayout);
+        leidosLayout.setHorizontalGroup(
+            leidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        leidosLayout.setVerticalGroup(
+            leidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        eliminar.setText("Eliminar");
+        eliminar.setActionCommand("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+        menu.add(eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -795,8 +993,6 @@ public class Principal extends javax.swing.JFrame {
                 tcontra1.setText("");
             } else {
                 try {
-
-                    escribirArchivo();
                     JOptionPane.showMessageDialog(this.registar, "Cuenta guardada exitosamente");
                     registar.setVisible(false);
                     de.setText(tcorreo.getText());
@@ -807,8 +1003,8 @@ public class Principal extends javax.swing.JFrame {
                     tcontra1.setText("");
                     tcontra.setText("");
                     tpais.setText("");
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception e) {
+
                 }
 
             }
@@ -846,6 +1042,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
+
         borradores.setModal(true);
         borradores.pack();
         borradores.setLocationRelativeTo(this.buzon);
@@ -859,18 +1056,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         // TODO add your handling code here:
-        String m1 = "Bienvenido a nuestra nueva cuenta de mensajeria, es un gusto concederle este servicio";
-        String m2 = "Le recordamos pagar el servicio de nuestra cable e internet";
-        String m3 = "Estimado cliente, contacte con nuestros servicios para el nuevo descuento de su laptop";
-        String m4 = "Aproveche nuestras super promociones y descuentos aqui es lapstereo";
-        String m5 = "Compre nuestra nueva consolo fidget spinner cuatro k lol xd";
-        mensaje.add(m1);
-        mensaje1.add(m2);
-        mensaje2.add(m3);
-        mensaje3.add(m4);
-        mensaje4.add(m5);
-        DefaultTableModel modelotabla;
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+
+        /*   spamear.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {null},
                     {null},
@@ -890,25 +1077,142 @@ public class Principal extends javax.swing.JFrame {
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
-        });
-
+        });*/
 
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // TODO add your handling code here:
-        if (para.getText().equals(vacio)) {
+        if (para.getText().equals(vacio) || area.getText().equals(vacio)) {
             JOptionPane.showMessageDialog(this.enviar, "no ha llenado el destinatario");
         } else {
             JOptionPane.showMessageDialog(this.enviar, "Se ha mandado tu mensaje a :" + para.getText());
+            Object[] newrow = {
+                para.getText(),
+                area.getText()};
+            DefaultTableModel modelo = (DefaultTableModel) envi.getModel();
+            modelo.addRow(newrow);
+            envi.setModel(modelo);
             enviar.setVisible(false);
+            para.setText("");
+            area.setText("");
+
         }
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
-        spam.setModal(rootPaneCheckingEnabled);
+        try {
+            String m1 = "Bienvenido a nuestra nueva cuenta de mensajeria, es un gusto concederle este servicio";
+            String m2 = "Le recordamos pagar el servicio de nuestra cable e internet";
+            String m3 = "Estimado cliente, contacte con nuestros servicios para el nuevo descuento de su laptop";
+            String m4 = "Aproveche nuestras super promociones y descuentos aqui es lapstereo";
+            String m5 = "Compre nuestra nueva consolo fidget spinner cuatro k lol xd";
+            Object[] newro = {
+                m1,
+                m2,
+                m3,
+                m4,
+                m5};
+            DefaultTableModel modelo = (DefaultTableModel) spamear.getModel();
+            modelo.addRow(newro);
+            spamear.setModel(modelo);
+
+            spam.setModal(true);
+            spam.pack();
+            spam.setLocationRelativeTo(this.spam);
+            spam.setVisible(true);
+        } catch (Exception e) {
+
+        }
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        enviadoss.setVisible(false);
+    }//GEN-LAST:event_jButton15MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        enviadoss.setModal(true);
+        enviadoss.pack();
+        enviadoss.setLocationRelativeTo(this.buzon);
+        enviadoss.setVisible(true);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+        if (area.getText().equals(vacio)) {
+            JOptionPane.showMessageDialog(this.enviar, "no ha llenado el contenido del texto");
+        } else {
+            JOptionPane.showMessageDialog(this.enviar, "Su mensaje ya esta en borradores");
+            Object[] newrow = {
+                para.getText(),
+                area.getText()};
+            DefaultTableModel modelo = (DefaultTableModel) tabla_personas.getModel();
+            modelo.addRow(newrow);
+            tabla_personas.setModel(modelo);
+            Object[] newr = {
+                para.getText(),
+                area.getText()};
+            DefaultTableModel mode = (DefaultTableModel) elimina.getModel();
+            modelo.addRow(newr);
+            tabla_personas.setModel(mode);
+            enviar.setVisible(false);
+            area.setText("");
+            para.setText("");
+        }
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        eliminados.setVisible(false);
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        eliminados.setModal(true);
+        eliminados.pack();
+        eliminados.setLocationRelativeTo(this.buzon);
+        eliminados.setVisible(true);
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void enviMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviMouseClicked
+        // TODO add your handling code here:
+        try {
+            if (evt.isMetaDown()) {
+                menu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        } catch (Exception e) {
+
+        }
+
+    }//GEN-LAST:event_enviMouseClicked
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here
+        try {
+            DefaultTableModel modelo = (DefaultTableModel) envi.getModel();
+            for (int i = 0; i < modelo.getRowCount(); i++) {
+                int n = Integer.parseInt(JOptionPane.showInputDialog("Que posicion desea eliminar:"));
+                modelo.removeRow(n);
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_eliminarActionPerformed
+
+    private void eliminaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminaMouseClicked
+        // TODO add your handling code here:
+        try {
+            if (evt.isMetaDown()) {
+                menu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        } catch (Exception e) {
+        }
+
+
+    }//GEN-LAST:event_eliminaMouseClicked
 
     public void escribirArchivo() throws IOException {
         File archivo = null;
@@ -968,10 +1272,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea area;
     private javax.swing.JDialog borradores;
     private javax.swing.JDialog buzon;
     private javax.swing.JPasswordField contrase;
     private javax.swing.JTextField de;
+    private javax.swing.JTable elimina;
+    private javax.swing.JDialog eliminados;
+    private javax.swing.JMenuItem eliminar;
+    private javax.swing.JTable envi;
+    private javax.swing.JDialog enviadoss;
     private javax.swing.JDialog enviar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -979,8 +1289,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1001,6 +1313,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1010,6 +1325,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1017,16 +1334,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JDialog leidos;
+    private javax.swing.JPopupMenu menu;
     private javax.swing.JTextField para;
     private javax.swing.JDialog registar;
     private javax.swing.JDialog spam;
+    private javax.swing.JTable spamear;
+    private javax.swing.JTable tabla_personas;
     private javax.swing.JTextField tapellido;
     private javax.swing.JPasswordField tcontra;
     private javax.swing.JPasswordField tcontra1;
@@ -1043,4 +1364,5 @@ String vacio = "";
     ArrayList mensaje2 = new ArrayList();
     ArrayList mensaje3 = new ArrayList();
     ArrayList mensaje4 = new ArrayList();
+    Personas selec = new Personas();
 }

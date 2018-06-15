@@ -5,8 +5,13 @@
  */
 package lab_repo_arieperez;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -30,11 +35,14 @@ public class Personas {
     private ArrayList<String> enviados = new ArrayList();
     private ArrayList<String> eliminados = new ArrayList();
     private ArrayList<String> importantes = new ArrayList();
+    ArrayList<Personas> per= new ArrayList();
+    private File archivo = null;
 
     public Personas() {
     }
 
     public Personas(String nombre, String apellido, String correo, Date fecha, String pais, int numero, String contrasena) {
+        this.per = new ArrayList();
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -42,6 +50,12 @@ public class Personas {
         this.pais = pais;
         this.numero = numero;
         this.contrasena = contrasena;
+    }
+
+    public Personas(String nombre) {
+        this.per = new ArrayList();
+        this.nombre = nombre;
+        archivo = new File("./@unitec.edu/" + nombre + ".txt");
     }
 
     public String getNombre() {
@@ -172,11 +186,64 @@ public class Personas {
         this.importantes = importantes;
     }
 
+    public File getArchivo() {
+        return archivo;
+    }
+
+    public void setArchivo(File archivo) {
+        this.archivo = archivo;
+        cargarArchivo();
+        setNombre(this.archivo.getName());
+    }
+
     @Override
     public String toString() {
         return "Personas{" + "nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", fecha=" + fecha + ", pais=" + pais + ", numero=" + numero + ", contrasena=" + contrasena + '}';
     }
+     public void setPersona(Personas s ){
+        this.per.add(s);
+    };
 
-   
+
+    public void escribirArchivo() throws IOException {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
+            for (Personas t : per) {
+                bw.write(t.getNombre()+";");
+                bw.write(t.getApellido() + ";");
+                bw.write(t.getCorreo() + ";");
+                bw.write(t.getContrasena()+";");
+                bw.write(t.getNumero()+";");
+                bw.write(t.getPais()+";");
+                bw.write(t.getFecha()+";");
+            }
+            bw.flush();
+        } catch (Exception e) {
+        }
+        bw.close();
+        fw.close();
+    }
+
+    public void cargarArchivo() {
+
+        if (archivo.exists()) {//asi verificamos si el archivo existe
+            Scanner sc = null;
+            try {
+                System.out.println("Nuevo");
+                sc = new Scanner(archivo);
+                sc.useDelimiter(";");
+                while (sc.hasNext()) {
+                    System.out.println("usuario");
+                    per.add(new Personas());
+                }
+            } catch (Exception e) {
+            }
+            sc.close();
+        }
+
+    }
 
 }//fin de la clase
